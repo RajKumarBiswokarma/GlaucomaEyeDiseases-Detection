@@ -17,12 +17,16 @@ G1020: https://arxiv.org/abs/2006.09158
 
 Total of 745 images where 486 images are Glaucoma negative image and 259 Glaucoma positive images.
 
+# Source for model and dataset:
+drive link : https://drive.google.com/drive/folders/1n2Kd9SQgWaqD5XWjlmbfu-PL_y6b0Xoc?usp=drive_link
+
 # Installation
 
 1. Clone the repository : git clone https://github.com/RajKumarBiswokarma/GlaucomaEyeDiseases-Detection.git
 2. Navigate to the project directory: cd GlaucomaEyeDiseases
 3. Install the requirements : pip install -r requirements.txt
-4. Run the  interference code: gradio gradio_interface.py
+4. From drive download the models folder and copy to the project directory
+5. Run the  interference code: gradio gradio_interface.py
 
    
 
