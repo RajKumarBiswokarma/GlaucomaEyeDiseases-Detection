@@ -8,20 +8,40 @@ import numpy as np
 model = tf.keras.models.load_model("inception_model_epoch.h5")
 
 def preprocess_image(image):
+      """Preprocesses an input image for further analysis or model inference.
+
+    Args:
+        image (numpy.ndarray): The input image as a NumPy array in BGR format.
+
+    Returns:
+        numpy.ndarray: The preprocessed image as a NumPy array with the following transformations:
+            - Resized to a shape of (224, 224)
+            - Converted from BGR to RGB color space
+            - Normalized by dividing pixel values by 255
+            - Expanded dimensions to have a shape of (1, 224, 224, 3)
+
+    """
     image = cv2.resize(image,(224,224))
-    # transformed_image = cv2.applyColorMap(image, cv2.COLORMAP_HSV)
-    # transformed_image = cv2.resize(transformed_image, (224, 224))
-    # gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) 
-    # ret,thresh = cv2.threshold(gray_image,100,300,0) 
-    # contours,hierarchy = cv2.findContours(thresh,cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) 
-    # contoured_image = cv2.drawContours(image,contours,-1,(0,300,0),1)
-    # contoured_image = cv2.resize(contoured_image, (224, 224))
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     image = np.array(image) / 255
     image = np.expand_dims(image, axis=0)
     return image #, transformed_image, contoured_image
 
 def predict(image):
+    
+    """Performs glaucoma prediction on the input image using a pre-trained model.
+
+    Args:
+        image (numpy.ndarray): The input image as a NumPy array in BGR format.
+
+    Returns:
+        str: The predicted result indicating the presence or absence of glaucoma:
+            - If glaucoma is predicted (probability < 0.5):
+                "Glaucoma POSITIVE. Consult Ophthalmologist as soon as possible."
+            - If glaucoma is not predicted (probability >= 0.5):
+                "Glaucoma NEGATIVE. You have a Healthy eye."
+
+    """
     # Preprocess the image
     image= preprocess_image(image)
 
