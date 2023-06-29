@@ -9,7 +9,7 @@ The Glaucoma Eye Diseases Prediction project utilizes the InspectionV2 architect
 
 # Dataset
 
-Dataset that relies in this project is from kaggle where there are three different datasets and i have used a all together. The Paper of the dataset are:
+Dataset that relies in this project is from kaggle where there are three different datasets and   used  all together. This datasets are opensource. The Paper of the dataset are:
 
 ORIGA: https://pubmed.ncbi.nlm.nih.gov/21095735/
 
