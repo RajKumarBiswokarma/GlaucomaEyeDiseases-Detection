@@ -1,1 +1,6 @@
 python
+opencv-python
+numpy
+gradio
+tensorflow
+scikit-learn
