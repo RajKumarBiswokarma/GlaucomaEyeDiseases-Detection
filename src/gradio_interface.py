@@ -5,7 +5,7 @@ import numpy as np
 
 
 
-model = tf.keras.models.load_model("inception_model_epoch.h5")
+model = tf.keras.models.load_model("../model/inception_model_epoch.h5")
 
 def preprocess_image(image):
       """Preprocesses an input image for further analysis or model inference.
